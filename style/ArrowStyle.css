@@ -1,0 +1,63 @@
+.ArrowContainer {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto auto;
+  position: absolute;
+}
+.ArrowHead {
+  grid-row-start: 1;
+  grid-column-start: 3;
+  grid-row-end: 3;
+  grid-column-end: 4;
+
+  width: 0;
+  height: 0;
+  border-top: 35px solid transparent;
+  border-left: 35px solid #cb325b;
+  border-bottom: 35px solid transparent;
+  pointer-events: none;
+}
+.ArrowBody {
+  grid-row-start: 1;
+  grid-column-start: 2;
+  grid-row-end: 3;
+  grid-column-end: 3;
+  width: 150px;
+  height: 100%;
+  text-align: center;
+  background-color: #cb325b;
+  pointer-events: none;
+}
+.ArrowTailTop {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-row-end: 2;
+  grid-column-end: 2;
+
+  width: 0;
+  height: 0;
+  border-top: 0px solid transparent;
+  border-left: 35px solid #cb325b;
+  border-bottom: 35px solid transparent;
+  transform: rotate(90deg);
+  pointer-events: none;
+}
+.ArrowTailBot {
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-row-end: 3;
+  grid-column-end: 2;
+
+  width: 0;
+  height: 0;
+  border-top: 35px solid transparent;
+  border-left: 35px solid #cb325b;
+  border-bottom: 0px solid transparent;
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.ArrowContainer > div:hover {
+  color: white;
+  font-weight: bold;
+}
