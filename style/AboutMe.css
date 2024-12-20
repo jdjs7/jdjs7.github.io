@@ -1,12 +1,3 @@
-#infoHeader {
-  width: 100%;
-  height: 70px;
-  background: linear-gradient(90deg, #8b3efe 50%, #f22e84 100%);
-  color: white;
-  font-size: 30px;
-  line-height: 70px;
-  padding-left: 40px;
-}
 #LanguageDisplay {
   position: absolute;
   right: 10px;

@@ -35,7 +35,21 @@ body {
   line-height: 70px;
 }
 
+.Header {
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(90deg, #8b3efe 50%, #f22e84 100%);
+  color: white;
+  font-size: 30px;
+  line-height: 70px;
+  padding-left: 40px;
+}
+
 #Home_wrapper {
+  width: 100%;
+  height: 1000px;
+}
+#NameWrapper {
   width: 100%;
   height: 1000px;
 }
@@ -44,13 +58,16 @@ body {
   width: 100%;
   height: 1000px;
 }
-
-#NameWrapper {
+#InfoWrapper {
   width: 100%;
   height: 1000px;
 }
 
-#InfoWrapper {
+#Projects_wrapper {
+  width: 100%;
+  height: 1000px;
+}
+#ProjectsWrapper {
   width: 100%;
   height: 1000px;
 }
