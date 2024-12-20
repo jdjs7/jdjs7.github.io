@@ -1,6 +1,7 @@
 body {
   background-color: rgb(20, 20, 20);
   margin: 0;
+  font-family: "Fira Code", monospace;
 }
 
 #headline {
@@ -11,9 +12,10 @@ body {
   height: 70px;
   position: sticky;
   top: 0;
+  z-index: 100;
 }
 
-#headShadow {
+.headShadow {
   width: 100%;
   height: 10px;
   position: absolute;
@@ -30,8 +32,27 @@ body {
   color: rgb(202, 202, 202);
   float: right;
   font-size: 30px;
-  font-family: "Fira Code", monospace;
   line-height: 70px;
+}
+
+#Home_wrapper {
+  width: 100%;
+  height: 1000px;
+}
+
+#Info_wrapper {
+  width: 100%;
+  height: 1000px;
+}
+
+#NameWrapper {
+  width: 100%;
+  height: 1000px;
+}
+
+#InfoWrapper {
+  width: 100%;
+  height: 1000px;
 }
 /*
 #8b3efe purple

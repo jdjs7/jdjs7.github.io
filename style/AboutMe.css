@@ -1,0 +1,44 @@
+#infoHeader {
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(90deg, #8b3efe 50%, #f22e84 100%);
+  color: white;
+  font-size: 30px;
+  line-height: 70px;
+  padding-left: 40px;
+}
+#LanguageDisplay {
+  position: absolute;
+  right: 10px;
+  width: 700px;
+  height: 500px;
+  margin: 30px;
+  border: red solid;
+}
+#AboutText {
+  background-color: rgb(78, 78, 78);
+  border-bottom-right-radius: 500px;
+  height: 800px;
+  width: 600px;
+  transform: scale(1.8, 1);
+  padding: 40px;
+}
+#section1 {
+  color: white;
+}
+#section2 {
+  color: #8b3efe;
+}
+#section3 {
+  color: #f22e84;
+}
+.section {
+  font-size: 30px;
+  padding-bottom: 15px;
+  transform: scale(0.5555, 1);
+}
+
+/*
+  #8b3efe purple
+  #f22e84 red
+  */
