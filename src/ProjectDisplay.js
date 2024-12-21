@@ -29,6 +29,7 @@ function appendProjects() {
   var Texts = [];
   var Images = [];
   var More = [];
+  var Languages = [];
 
   switch (SelectedType) {
     case Type.Blender:
@@ -39,12 +40,13 @@ function appendProjects() {
       Texts[0] =
         "Lororem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.em ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
       More[0] = null;
+      Languages[0] = "/images/blender.png";
       break;
 
     default:
       break;
   }
-  CreateProjectObjects(Names, Texts, Images, More);
+  CreateProjectObjects(Names, Texts, Images, More, Languages);
 }
 
 function CreateProjectObjects(Names, Texts, Images, More) {

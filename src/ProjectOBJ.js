@@ -7,12 +7,15 @@ class Project {
   ProjectImageHead = document.createElement("div");
   ProjectTextContainer = document.createElement("div");
   ProjectTextField = document.createElement("div");
+  ProjectAboutContainer = document.createElement("div");
   ProjectAboutLink = document.createElement("div");
+  ProjectLanguageContainer = document.createElement("div");
 
-  constructor(Name, Text, Image, More) {
+  constructor(Name, Text, Image, More, Languages) {
+    console.log(Languages);
     this.createElements();
     this.addClasses();
-    this.addAdditionals(Image);
+    this.addAdditionals(Image, Languages);
     this.addParameters(Name, Text, Image, More);
   }
   createElements() {
@@ -20,9 +23,11 @@ class Project {
     this.ProjectContainer.append(this.ProjectBody);
     this.ProjectRightBody.append(this.ProjectImageHead);
     this.ProjectRightBody.append(this.ProjectImageContainer);
-    this.ProjectRightBody.append(this.ProjectAboutLink);
+    this.ProjectRightBody.append(this.ProjectAboutContainer);
     this.ProjectBody.append(this.ProjectTextContainer);
     this.ProjectBody.append(this.ProjectRightBody);
+    this.ProjectAboutContainer.append(this.ProjectAboutLink);
+    this.ProjectAboutContainer.append(this.ProjectLanguageContainer);
     this.ProjectTextContainer.append(this.ProjectTextField);
   }
   addClasses() {
@@ -33,13 +38,22 @@ class Project {
     this.ProjectTextContainer.classList.add("TextContainer");
     this.ProjectTextField.classList.add("ProjectDescription");
     this.ProjectAboutLink.classList.add("AboutLink");
+    this.ProjectAboutContainer.classList.add("AboutContainer");
     this.ProjectRightBody.classList.add("ProjectRightSide");
     this.ProjectImageHead.classList.add("ImageHead");
   }
-  addAdditionals(Image) {
+  addAdditionals(Image, Languages) {
     //2.
     this.ProjectImageHead.textContent = ParsePathToFileName(Image.src);
     this.ProjectAboutLink.textContent = "More to this Project >> Logo";
+    Languages.forEach((img) => {
+      ProjectLanguage = document.createElement("div");
+      ProjectLanguageImage = new Image();
+      ProjectLanguageImage.src = img;
+      ProjectLanguage.classList.add("ProjectLanguage");
+      ProjectLanguage.append(ProjectLanguageImage);
+      this.ProjectLanguageContainer.append(ProjectLanguage);
+    });
   }
   addParameters(Name, Text, Image, More) {
     Image.classList.add("ProjectImage");

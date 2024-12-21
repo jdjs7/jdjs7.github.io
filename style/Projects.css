@@ -86,8 +86,8 @@
   border-radius: 5px;
   padding: 10px;
   color: white;
-  width: 97%;
-  margin-bottom: 5px;
+  width: 93%;
+  margin: 10px;
 }
 .TextContainer {
   position: absolute;
@@ -113,5 +113,7 @@
   color: white;
   float: right;
   width: auto;
-  margin-right: 10px;
+}
+.AboutContainer {
+  width: 97%;
 }
