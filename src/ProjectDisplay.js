@@ -1,3 +1,6 @@
+const Types = document.getElementsByClassName("ProjectType");
+var Container = document.getElementById("ProjectsDisplay");
+var SelectedType = null;
 const Type = {
   Blender: "Blender",
   html: "html",
@@ -7,53 +10,72 @@ const Type = {
   SQL: "SQL",
   JS: "JS",
 };
-var Container = document.getElementById("ProjectsDisplay");
-var SelectedType = null;
 
 function showProjects(type) {
   if (SelectedType != type) {
     SelectedType = type;
+    window.scrollTo(0, 2000);
     clearProjects();
     appendProjects();
   }
 }
 
 function clearProjects() {
-  Container.childNodes.forEach((child) => {
-    child.remove();
-  });
+  while (Container.firstChild) {
+    Container.removeChild(Container.firstChild);
+  }
 }
 
 function appendProjects() {
-  var Names = [];
-  var Texts = [];
-  var Images = [];
-  var More = [];
-  var Languages = [];
-
+  var elements = [];
   switch (SelectedType) {
     case Type.Blender:
-      var image_one = new Image();
-      image_one.src = "images/placeholder.png";
-      Images[0] = image_one;
-      Names[0] = "PlaceHolder Name";
-      Texts[0] =
-        "Lororem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.em ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-      More[0] = null;
-      Languages[0] = "/images/blender.png";
+      highlightType(2);
+      elements = Projects[0];
       break;
-
+    case Type.html:
+      highlightType(4);
+      elements = Projects[1];
+      break;
+    case Type.Java:
+      highlightType(0);
+      elements = Projects[2];
+      break;
+    case Type.CPP:
+      highlightType(1);
+      elements = Projects[3];
+      break;
+    case Type.CSS:
+      highlightType(6);
+      elements = Projects[4];
+      break;
+    case Type.SQL:
+      highlightType(3);
+      elements = Projects[5];
+      break;
+    case Type.JS:
+      highlightType(5);
+      elements = Projects[6];
+      break;
     default:
       break;
   }
-  CreateProjectObjects(Names, Texts, Images, More, Languages);
+  appendProjectObjects(elements);
 }
 
-function CreateProjectObjects(Names, Texts, Images, More) {
-  var size = Names.length;
-  for (let i = 0; i < size; i++) {
-    var element = new Project(Names[i], Texts[i], Images[i], More[i]);
-    console.log(element);
-    Container.append(element.getObject());
+function appendProjectObjects(elements) {
+  elements.forEach((element) => {
+    Container.append(element);
+  });
+}
+
+function highlightType(index) {
+  for (let i = 0; i < Types.length; i++) {
+    if (i == index) {
+      var erm = document.getElementById("s");
+      Types[i].style.backgroundColor = "rgb(56, 56, 56)";
+    } else {
+      Types[i].style.backgroundColor = "rgb(20, 20, 20)";
+    }
   }
 }

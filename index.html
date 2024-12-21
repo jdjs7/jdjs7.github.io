@@ -27,10 +27,13 @@
       </div>
 
       <div id="Info_wrapper">
-        <div class="Header">About Me</div>
+        <div class="Header" id="1stHead">About Me</div>
         <div id="InfoWrapper">
           <div id="LanguageDisplay">
-            <img src="" alt="" />
+            <div id="Langdistribution">
+              Programmiersprachenanteile meiner eigenen Programmierprojekte
+            </div>
+            <img src="images/chart.png" class="ProjectImage" id="Diagram" />
           </div>
           <div id="AboutText">
             <div class="section" id="section1">
@@ -50,7 +53,7 @@
       </div>
 
       <div id="Projects_wrapper">
-        <div class="Header">My Projects</div>
+        <div class="Header" id="2ndHead">My Projects</div>
         <div id="ProjectsWrapper">
           <div id="ProjectTypeSelector">
             <div class="ProjectType" onclick="showProjects(Type.Java)">
@@ -86,12 +89,17 @@
         </div>
       </div>
 
-      <div id="Contact_wrapper"></div>
+      <div id="Contact_wrapper">
+        <div class="Header" id="3rdHead">Contact Me</div>
+        <div id="ContactWrapper"></div>
+      </div>
     </div>
 
     <script src="src/script.js"></script>
     <script src="src/header.js"></script>
+    <script src="src/readScroll.js"></script>
     <script src="src/ProjectDisplay.js"></script>
     <script src="src/ProjectOBJ.js"></script>
+    <script src="src/ProjectOBJCreator.js"></script>
   </body>
 </html>

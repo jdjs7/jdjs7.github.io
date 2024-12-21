@@ -13,14 +13,14 @@ class HInstance {
 
   init() {
     this.element = document.createElement("div");
+    this.element.classList.add("HInstance");
+    this.element.classList.add("Arrow");
     this.element.addEventListener("mouseover", function (e) {
       MouseIn(e);
     });
     this.element.addEventListener("mouseleave", function (e) {
       MouseOut(e);
     });
-    this.element.classList.add("HInstance");
-    this.element.classList.add("Arrow");
     MakeArrow(this.element, this.Name);
     document.getElementById("headline").append(this.element);
   }
@@ -37,25 +37,26 @@ class HInstance {
 }
 
 function MouseIn(element) {
-  for (const child of element.target.children) {
-    if (child.classList.contains("ArrowBody")) {
-      child.style.backgroundColor = "#8b223e";
-    } else {
-      child.style.borderLeft = "35px solid #8b223e";
-    }
+  if (element.target.children[1].style.backgroundColor != "rgb(139, 62, 254)") {
+    changeArrowColor(element.target, "#8b223e");
   }
 }
 
 function MouseOut(element) {
-  for (const child of element.target.children) {
-    if (child.classList.contains("ArrowBody")) {
-      child.style.backgroundColor = "#cb325b";
-    } else {
-      child.style.borderLeft = "35px solid #cb325b";
-    }
+  if (element.target.children[1].style.backgroundColor != "rgb(139, 62, 254)") {
+    changeArrowColor(element.target, "#cb325b");
   }
 }
 
+function changeArrowColor(e, color) {
+  for (const child of e.children) {
+    if (child.classList.contains("ArrowBody")) {
+      child.style.backgroundColor = color;
+    } else {
+      child.style.borderLeftColor = color;
+    }
+  }
+}
 function MakeArrow(parent, Text) {
   var ArrowHead = document.createElement("div");
   var ArrowBody = document.createElement("div");

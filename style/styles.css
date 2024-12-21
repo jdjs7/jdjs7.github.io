@@ -2,6 +2,9 @@ body {
   background-color: rgb(20, 20, 20);
   margin: 0;
   font-family: "Fira Code", monospace;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 #headline {
@@ -65,11 +68,21 @@ body {
 
 #Projects_wrapper {
   width: 100%;
-  height: 1000px;
+  height: auto;
+  min-height: 1000px;
 }
 #ProjectsWrapper {
   width: 100%;
-  height: 1000px;
+  height: auto;
+}
+
+#Contact_wrapper {
+  width: 100%;
+  height: 800px;
+}
+#ContactWrapper {
+  width: 100%;
+  height: 800px;
 }
 /*
 #8b3efe purple

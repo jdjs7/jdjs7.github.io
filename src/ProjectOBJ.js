@@ -10,22 +10,33 @@ class Project {
   ProjectAboutContainer = document.createElement("div");
   ProjectAboutLink = document.createElement("div");
   ProjectLanguageContainer = document.createElement("div");
-
+  ProjectImageHeadContainer = document.createElement("div");
+  ProjectImageHeadArrowRight = document.createElement("div");
+  ProjectImageHeadArrowLeft = document.createElement("div");
+  ProjectImages = [];
+  currentImage = 0;
   constructor(Name, Text, Image, More, Languages) {
-    console.log(Languages);
+    this.ProjectImages = Image;
     this.createElements();
+    if (Image.length > 1) {
+      this.createArrowButtons();
+    }
     this.addClasses();
-    this.addAdditionals(Image, Languages);
-    this.addParameters(Name, Text, Image, More);
+    this.addAdditionals(Languages);
+    this.ImageSelect(this.currentImage);
+    this.addParameters(Name, Text, More);
   }
   createElements() {
     this.ProjectContainer.append(this.ProjectHeader);
     this.ProjectContainer.append(this.ProjectBody);
-    this.ProjectRightBody.append(this.ProjectImageHead);
+    this.ProjectRightBody.append(this.ProjectImageHeadContainer);
     this.ProjectRightBody.append(this.ProjectImageContainer);
     this.ProjectRightBody.append(this.ProjectAboutContainer);
     this.ProjectBody.append(this.ProjectTextContainer);
     this.ProjectBody.append(this.ProjectRightBody);
+    this.ProjectImageHeadContainer.append(this.ProjectImageHeadArrowLeft);
+    this.ProjectImageHeadContainer.append(this.ProjectImageHead);
+    this.ProjectImageHeadContainer.append(this.ProjectImageHeadArrowRight);
     this.ProjectAboutContainer.append(this.ProjectAboutLink);
     this.ProjectAboutContainer.append(this.ProjectLanguageContainer);
     this.ProjectTextContainer.append(this.ProjectTextField);
@@ -41,26 +52,65 @@ class Project {
     this.ProjectAboutContainer.classList.add("AboutContainer");
     this.ProjectRightBody.classList.add("ProjectRightSide");
     this.ProjectImageHead.classList.add("ImageHead");
+    this.ProjectLanguageContainer.classList.add("LanguageContainer");
+    this.ProjectImageHeadContainer.classList.add("ImageHeadContainer");
+    this.ProjectImages.forEach((img) => {
+      img.classList.add("ProjectImage");
+    });
   }
-  addAdditionals(Image, Languages) {
-    //2.
-    this.ProjectImageHead.textContent = ParsePathToFileName(Image.src);
+  createArrowButtons() {
+    this.ProjectImageHeadArrowRight.textContent = "→";
+    this.ProjectImageHeadArrowLeft.textContent = "←";
+    this.ProjectImageHeadArrowRight.classList.add("ArrowButton");
+    this.ProjectImageHeadArrowLeft.classList.add("ArrowButton");
+    this.ProjectImageHeadArrowRight.style.marginLeft = "10px";
+    this.ProjectImageHeadArrowLeft.style.marginRight = "10px";
+
+    // Use an arrow function to preserve 'this'
+    this.ProjectImageHeadArrowLeft.addEventListener(
+      "click",
+      this.changeCurrentImage.bind(this, -1)
+    );
+    this.ProjectImageHeadArrowRight.addEventListener(
+      "click",
+      this.changeCurrentImage.bind(this, 1)
+    );
+  }
+
+  addAdditionals(Languages) {
     this.ProjectAboutLink.textContent = "More to this Project >> Logo";
     Languages.forEach((img) => {
-      ProjectLanguage = document.createElement("div");
-      ProjectLanguageImage = new Image();
-      ProjectLanguageImage.src = img;
+      img.classList.add("ProjectImage");
+      var ProjectLanguage = document.createElement("div");
       ProjectLanguage.classList.add("ProjectLanguage");
-      ProjectLanguage.append(ProjectLanguageImage);
+      ProjectLanguage.append(img);
       this.ProjectLanguageContainer.append(ProjectLanguage);
     });
   }
-  addParameters(Name, Text, Image, More) {
-    Image.classList.add("ProjectImage");
+  ImageSelect(index) {
+    this.ProjectImageHead.textContent = ParsePathToFileName(
+      this.ProjectImages[index].src
+    );
+    while (this.ProjectImageContainer.firstChild) {
+      this.ProjectImageContainer.removeChild(
+        this.ProjectImageContainer.firstChild
+      );
+    }
+    this.ProjectImageContainer.append(this.ProjectImages[index]);
+  }
+  addParameters(Name, Text, More) {
     this.ProjectHeader.textContent = Name;
-    this.ProjectImageContainer.append(Image);
     this.ProjectTextField.textContent = Text;
-    //1.
+  }
+  changeCurrentImage(amount) {
+    if (this.currentImage + amount === -1) {
+      this.currentImage = this.ProjectImages.length - 1;
+    } else if (this.currentImage + amount === this.ProjectImages.length) {
+      this.currentImage = 0;
+    } else {
+      this.currentImage += amount;
+    }
+    this.ImageSelect(this.currentImage);
   }
   getObject() {
     return this.ProjectContainer;
@@ -80,7 +130,3 @@ function getindexOfChar(c, s) {
     }
   }
 }
-
-//Todo
-//1. add url link to git
-//2. add img with git Logo
