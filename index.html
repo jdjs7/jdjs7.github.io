@@ -53,35 +53,36 @@
         <div class="Header">My Projects</div>
         <div id="ProjectsWrapper">
           <div id="ProjectTypeSelector">
-            <div class="ProjectType">
-              <img class="ProjectImage" src="images/java.png" alt="" />
+            <div class="ProjectType" onclick="showProjects(Type.Java)">
+              <img class="ProjectTypeImage" src="images/java.png" alt="" />
               <div class="ProjectTypeLabel">Java</div>
             </div>
-            <div class="ProjectType">
-              <img class="ProjectImage" src="images/cpp.png" alt="" />
+            <div class="ProjectType" onclick="showProjects(Type.CPP)">
+              <img class="ProjectTypeImage" src="images/cpp.png" alt="" />
               <div class="ProjectTypeLabel">C++</div>
             </div>
-            <div class="ProjectType">
-              <img class="ProjectImage" src="images/blender.png" alt="" />
+            <div class="ProjectType" onclick="showProjects(Type.Blender)">
+              <img class="ProjectTypeImage" src="images/blender.png" alt="" />
               <div class="ProjectTypeLabel">Blender</div>
             </div>
-            <div class="ProjectType">
-              <img class="ProjectImage" src="images/SQLite.png" alt="" />
+            <div class="ProjectType" onclick="showProjects(Type.SQL)">
+              <img class="ProjectTypeImage" src="images/SQLite.png" alt="" />
               <div class="ProjectTypeLabel">SQLite</div>
             </div>
-            <div class="ProjectType">
-              <img class="ProjectImage" src="images/html.png" alt="" />
+            <div class="ProjectType" onclick="showProjects(Type.html)">
+              <img class="ProjectTypeImage" src="images/html.png" alt="" />
               <div class="ProjectTypeLabel">html</div>
             </div>
-            <div class="ProjectType">
-              <img class="ProjectImage" src="images/JS.png" alt="" />
+            <div class="ProjectType" onclick="showProjects(Type .JS)">
+              <img class="ProjectTypeImage" src="images/JS.png" alt="" />
               <div class="ProjectTypeLabel">JS</div>
             </div>
-            <div class="ProjectType">
-              <img class="ProjectImage" src="images/CSS.png" alt="" />
+            <div class="ProjectType" onclick="showProjects(Type.CSS)">
+              <img class="ProjectTypeImage" src="images/CSS.png" alt="" />
               <div class="ProjectTypeLabel">CSS</div>
             </div>
           </div>
+          <div id="ProjectsDisplay"></div>
         </div>
       </div>
 
@@ -90,5 +91,7 @@
 
     <script src="src/script.js"></script>
     <script src="src/header.js"></script>
+    <script src="src/ProjectDisplay.js"></script>
+    <script src="src/ProjectOBJ.js"></script>
   </body>
 </html>
