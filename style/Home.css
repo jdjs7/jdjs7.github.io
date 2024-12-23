@@ -1,0 +1,50 @@
+:root {
+  --NameHeight: 100px;
+}
+#NameContainer {
+  position: absolute;
+  height: var(--NameHeight);
+  width: 600px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#NameText {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  line-height: var(--NameHeight);
+  color: white;
+  font-size: 50px;
+}
+#BorderTopLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150;
+  height: 50;
+  border-top: white solid;
+  border-bottom: rgba(255, 255, 255, 0) solid;
+  border-left: white solid;
+}
+
+#BorderBottomRight {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 150;
+  height: 50;
+  border-top: rgba(255, 255, 255, 0) solid;
+  border-right: white solid;
+  border-bottom: white solid;
+}
+#Parallelogram {
+  width: 800px;
+  height: 100%;
+  transform: skew(-40deg);
+  /*background: linear-gradient(0deg, #0000005d 0%, #00000000 100%);*/
+  background-color: #111;
+  position: absolute;
+  bottom: 0;
+  right: 180px;
+}

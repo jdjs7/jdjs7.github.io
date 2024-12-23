@@ -13,7 +13,7 @@
   width: 0;
   height: 0;
   border-top: 35px solid transparent;
-  border-left: 35px solid #cb325b;
+  border-left: 35px solid var(--primcolor);
   border-bottom: 35px solid transparent;
   pointer-events: none;
 }
@@ -25,7 +25,7 @@
   width: 150px;
   height: 100%;
   text-align: center;
-  background-color: #cb325b;
+  background-color: var(--primcolor);
   pointer-events: none;
 }
 .ArrowTailTop {
@@ -37,7 +37,7 @@
   width: 0;
   height: 0;
   border-top: 0px solid transparent;
-  border-left: 35px solid #cb325b;
+  border-left: 35px solid var(--primcolor);
   border-bottom: 35px solid transparent;
   transform: rotate(90deg);
   pointer-events: none;
@@ -51,7 +51,7 @@
   width: 0;
   height: 0;
   border-top: 35px solid transparent;
-  border-left: 35px solid #cb325b;
+  border-left: 35px solid var(--primcolor);
   border-bottom: 0px solid transparent;
   transform: rotate(-90deg);
   pointer-events: none;

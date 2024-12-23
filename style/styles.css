@@ -1,3 +1,8 @@
+:root {
+  --primcolor: #0c0fbd;
+  --Seccolor: #8a60dd;
+}
+
 body {
   background-color: rgb(20, 20, 20);
   margin: 0;
@@ -41,7 +46,11 @@ body {
 .Header {
   width: 100%;
   height: 70px;
-  background: linear-gradient(90deg, #8b3efe 50%, #f22e84 100%);
+  background: linear-gradient(
+    90deg,
+    var(--primcolor) 50%,
+    var(--Seccolor) 100%
+  );
   color: white;
   font-size: 30px;
   line-height: 70px;
@@ -55,6 +64,7 @@ body {
 #NameWrapper {
   width: 100%;
   height: 1000px;
+  position: absolute;
 }
 
 #Info_wrapper {

@@ -34,10 +34,10 @@
   color: white;
 }
 #section2 {
-  color: #8b3efe;
+  color: var(--primcolor);
 }
 #section3 {
-  color: #f22e84;
+  color: var(--Seccolor);
 }
 .section {
   font-size: 30px;

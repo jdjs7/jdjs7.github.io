@@ -1,3 +1,5 @@
+let PrimColor = "#0c0fbd";
+let SecColo = "#8a60dd";
 class HSubInstance {
   constructor(Name) {
     this.Name = Name;
@@ -37,14 +39,14 @@ class HInstance {
 }
 
 function MouseIn(element) {
-  if (element.target.children[1].style.backgroundColor != "rgb(139, 62, 254)") {
+  if (element.target.children[1].style.backgroundColor != SecColo) {
     changeArrowColor(element.target, "#8b223e");
   }
 }
 
 function MouseOut(element) {
-  if (element.target.children[1].style.backgroundColor != "rgb(139, 62, 254)") {
-    changeArrowColor(element.target, "#cb325b");
+  if (element.target.children[1].style.backgroundColor != SecColo) {
+    changeArrowColor(element.target, PrimColor);
   }
 }
 
@@ -57,6 +59,7 @@ function changeArrowColor(e, color) {
     }
   }
 }
+
 function MakeArrow(parent, Text) {
   var ArrowHead = document.createElement("div");
   var ArrowBody = document.createElement("div");
@@ -87,6 +90,15 @@ test3.element.style.right = "230px";
 test2.element.style.right = "430px";
 test1.element.style.right = "630px";
 
+test3.element.addEventListener("click", function () {
+  window.scrollTo(0, 2000);
+});
+test2.element.addEventListener("click", function () {
+  window.scrollTo(0, 1000);
+});
+test1.element.addEventListener("click", function () {
+  window.scrollTo(0, 0);
+});
 /*
 let league = new HInstance();
 league.newPlayer("Mark");
