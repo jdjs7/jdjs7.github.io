@@ -1,5 +1,5 @@
-let PrimColor = "#0c0fbd";
-let SecColo = "#8a60dd";
+let PrimColor = "rgb(71, 71, 71)";
+let SecColo = "rgb(138, 96, 221)";
 class HSubInstance {
   constructor(Name) {
     this.Name = Name;
@@ -40,7 +40,7 @@ class HInstance {
 
 function MouseIn(element) {
   if (element.target.children[1].style.backgroundColor != SecColo) {
-    changeArrowColor(element.target, "#8b223e");
+    changeArrowColor(element.target, "rgb(54, 54, 54)");
   }
 }
 
@@ -90,6 +90,9 @@ test3.element.style.right = "230px";
 test2.element.style.right = "430px";
 test1.element.style.right = "630px";
 
+test4.element.addEventListener("click", function () {
+  window.scrollTo(0, document.body.scrollHeight);
+});
 test3.element.addEventListener("click", function () {
   window.scrollTo(0, 2000);
 });

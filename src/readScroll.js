@@ -13,7 +13,7 @@ window.addEventListener("scroll", function () {
       changeArrowColor(Arrows[2], PrimColor);
       changeArrowColor(Arrows[3], PrimColor);
     } else if (
-      200 < document.getElementById("3rdHead").getBoundingClientRect().top
+      850 < document.getElementById("3rdHead").getBoundingClientRect().top
     ) {
       this.document.getElementById("ProjectTypeSelector").style.position =
         "sticky";

@@ -1,3 +1,6 @@
+:root {
+  --ArrowColor: rgb(71, 71, 71);
+}
 .ArrowContainer {
   display: grid;
   grid-template-rows: auto auto;
@@ -13,7 +16,7 @@
   width: 0;
   height: 0;
   border-top: 35px solid transparent;
-  border-left: 35px solid var(--primcolor);
+  border-left: 35px solid var(--ArrowColor);
   border-bottom: 35px solid transparent;
   pointer-events: none;
 }
@@ -25,7 +28,7 @@
   width: 150px;
   height: 100%;
   text-align: center;
-  background-color: var(--primcolor);
+  background-color: var(--ArrowColor);
   pointer-events: none;
 }
 .ArrowTailTop {
@@ -37,7 +40,7 @@
   width: 0;
   height: 0;
   border-top: 0px solid transparent;
-  border-left: 35px solid var(--primcolor);
+  border-left: 35px solid var(--ArrowColor);
   border-bottom: 35px solid transparent;
   transform: rotate(90deg);
   pointer-events: none;
@@ -51,7 +54,7 @@
   width: 0;
   height: 0;
   border-top: 35px solid transparent;
-  border-left: 35px solid var(--primcolor);
+  border-left: 35px solid var(--ArrowColor);
   border-bottom: 0px solid transparent;
   transform: rotate(-90deg);
   pointer-events: none;
